@@ -8,6 +8,7 @@ excludePools.json
 remix_test.ipynb
 .idea/.gitignore
 test.sol
+*.txt
 =======
 # Binaries for programs and plugins
 *.exe
@@ -24,5 +25,8 @@ test.sol
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
-out.txt
 abigen
+uni_factory.abi
+uni_pair.abi
+pancakepair.py
+
