@@ -9,6 +9,7 @@ remix_test.ipynb
 .idea/.gitignore
 test.sol
 *.txt
+*.csv
 =======
 # Binaries for programs and plugins
 *.exe
