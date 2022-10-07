@@ -10,6 +10,7 @@ remix_test.ipynb
 test.sol
 *.txt
 *.csv
+*.json
 =======
 # Binaries for programs and plugins
 *.exe
