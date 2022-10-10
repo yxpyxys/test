@@ -16,25 +16,26 @@ with open("uni_pair.abi","r") as f:
 
 exchange = {
     # 'pancakeswap': '0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73',
-    'sushiswap': '0xc35DADB65012eC5796536bD9864eD8773aBc74C4',
-    'pandaswap': '0x9Ad32bf5DaFe152Cbe027398219611DB4E8753B3',
-    'digiswap': '0x98813bD470A3BA8Da3D16488c58374e8dBc2FF22',
-    'nomiswap': '0xd6715A8be3944ec72738F0BFDC739d48C3c29349',
-    'broccoli': '0x5B9f88Ee10413e764BEFACa083fB290c4f25F720',
-    'biswap': '0x858E3312ed3A876947EA49d572A7C42DE08af7EE',
-    'bakeryswap': '0x01bF7C66c6BD861915CdaaE475042d3c4BaE16A7',
-    'apeswap': '0x0841BD0B734E4F5853f0dD8d7Ea041c241fb0Da6',
-    'safeswap': '0x4d05D0045df5562D6D52937e93De6Ec1FECDAd21',
-    'coswap': '0xf1B735685416253A8F7c8a6686970cA2B0cceCce',
-    'sphynx': '0x8BA1a4C24DE655136DEd68410e222cCA80d43444',
-    'dooarswap': '0x1e895bFe59E3A5103e8B7dA3897d1F2391476f3c',
-    'elk': '0x31aFfd875e9f68cd6Cd12Cee8943566c9A4bBA13',
-    'orbital': '0x1A04Afe9778f95829017741bF46C9524B91433fB',
-    'fstswap': '0x9A272d734c5a0d7d84E0a892e891a553e8066dce',
-    'w3swap': '0xD04A80baeeF12fD7b1D1ee6b1f8ad354f81bc4d7',
-    'bscswap': '0xCe8fd65646F2a2a897755A1188C04aCe94D2B8D0',
-    'bscsswap': '0x8b6Ca4B3E08c9f80209e66436187088C99C9C2AC',
-    'cheeseswap': '0xdd538E4Fd1b69B7863E1F741213276A6Cf1EfB3B',
+    # 'sushiswap': '0xc35DADB65012eC5796536bD9864eD8773aBc74C4',
+    # 'pandaswap': '0x9Ad32bf5DaFe152Cbe027398219611DB4E8753B3',
+    # 'digiswap': '0x98813bD470A3BA8Da3D16488c58374e8dBc2FF22',
+    # 'nomiswap': '0xd6715A8be3944ec72738F0BFDC739d48C3c29349',
+    # 'broccoli': '0x5B9f88Ee10413e764BEFACa083fB290c4f25F720',
+    # 'biswap': '0x858E3312ed3A876947EA49d572A7C42DE08af7EE',
+    # 'bakeryswap': '0x01bF7C66c6BD861915CdaaE475042d3c4BaE16A7',
+    # 'apeswap': '0x0841BD0B734E4F5853f0dD8d7Ea041c241fb0Da6',
+    # 'safeswap': '0x4d05D0045df5562D6D52937e93De6Ec1FECDAd21',
+    # 'coswap': '0xf1B735685416253A8F7c8a6686970cA2B0cceCce',
+    # 'sphynx': '0x8BA1a4C24DE655136DEd68410e222cCA80d43444',
+    # 'dooarswap': '0x1e895bFe59E3A5103e8B7dA3897d1F2391476f3c',
+    # 'elk': '0x31aFfd875e9f68cd6Cd12Cee8943566c9A4bBA13',
+    # 'orbital': '0x1A04Afe9778f95829017741bF46C9524B91433fB',
+    # 'fstswap': '0x9A272d734c5a0d7d84E0a892e891a553e8066dce',
+    # 'w3swap': '0xD04A80baeeF12fD7b1D1ee6b1f8ad354f81bc4d7',
+    # 'bscswap': '0xCe8fd65646F2a2a897755A1188C04aCe94D2B8D0',
+    # 'bscsswap': '0x8b6Ca4B3E08c9f80209e66436187088C99C9C2AC',
+    # 'cheeseswap': '0xdd538E4Fd1b69B7863E1F741213276A6Cf1EfB3B',
+    'mdex': '0x3CD1C46068dAEa5Ebb0d3f55F6915B10648062B8',
 }
 
 token_df = pd.read_csv("bsc_token.csv")
@@ -55,8 +56,10 @@ for e in exchange:
         p = w3.eth.contract(address=pair_address, abi=pair_abi)
         t0 = p.functions.token0().call().lower()
         t1 = p.functions.token1().call().lower()
-        if t0 in token_set and t1 in token_set:
-            pair_dict[pair_address.lower()] = {"token0": t0, "token1": t1}
+        # if t0 in token_set and t1 in token_set:
+        pair_dict[pair_address.lower()] = {"token0": t0, "token1": t1}
+        if i % 10000 == 0:
+            print(i)
 
     # def get_one_pair(i: int):
     #     pair_address = c.functions.allPairs(i).call()
@@ -78,4 +81,4 @@ for e in exchange:
     print(e, len(df))
     result_df = pd.concat([result_df, df])
 
-result_df.to_csv("pair.csv", index=True, index_label='address')
+result_df.to_csv("mdxpairs.csv", index=True, index_label='address')

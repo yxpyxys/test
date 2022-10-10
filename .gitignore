@@ -11,6 +11,7 @@ test.sol
 *.txt
 *.csv
 *.json
+*.ipynb
 =======
 # Binaries for programs and plugins
 *.exe
