@@ -15,6 +15,6 @@ for t in tokens:
     address = t['address']
     c = w3.eth.contract(address=Web3.toChecksumAddress(address), abi=pair_abi)
     event_filter = c.events.Swap.createFilter(fromBlock=fromBlock)
-    el = event_filter.get_all_entries()
+    el = event_filter.get_new_entries()
     print(el)
     # print(el[1])
