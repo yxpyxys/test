@@ -1,4 +1,3 @@
-test.ipynb
 .idea/misc.xml
 .idea/modules.xml
 .idea/taoli.iml
@@ -8,3 +7,10 @@ excludePools.json
 remix_test.ipynb
 .idea/.gitignore
 test.sol
+*.ipynb
+*.csv
+*.txt
+*.json
+*.go
+abigen
+*.abi
