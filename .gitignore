@@ -13,7 +13,6 @@ test.sol
 *.ipynb
 *.go
 abigen
-*.abi
 =======
 # Binaries for programs and plugins
 *.exe
@@ -31,7 +30,3 @@ abigen
 # Dependency directories (remove the comment below to include it)
 # vendor/
 abigen
-uni_factory.abi
-uni_pair.abi
-
-
