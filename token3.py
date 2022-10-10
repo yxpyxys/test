@@ -3,10 +3,10 @@ import json
 
 w3 = Web3(IPCProvider("../node/geth.ipc"))
 
-with open("uni_pair.abi","r") as f:
+with open("data/uni_pair.abi","r") as f:
     pair_abi = json.loads(f.readline())
 
-with open("bsc_token.json","r") as f:
+with open("data/bsc_token.json","r") as f:
     tokens = json.loads(f.readline())
 
 fromBlock = 22048683 - int(86400*0.33)*10

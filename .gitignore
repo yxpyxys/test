@@ -9,7 +9,6 @@ remix_test.ipynb
 test.sol
 *.txt
 *.csv
-*.json
 *.ipynb
 *.go
 abigen
