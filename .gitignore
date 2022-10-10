@@ -1,4 +1,3 @@
-test.ipynb
 .idea/misc.xml
 .idea/modules.xml
 .idea/taoli.iml
@@ -12,6 +11,9 @@ test.sol
 *.csv
 *.json
 *.ipynb
+*.go
+abigen
+*.abi
 =======
 # Binaries for programs and plugins
 *.exe
@@ -31,5 +33,5 @@ test.sol
 abigen
 uni_factory.abi
 uni_pair.abi
-pancakepair.py
+
 
