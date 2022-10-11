@@ -1,17 +1,13 @@
-.idea/misc.xml
-.idea/modules.xml
-.idea/taoli.iml
-.idea/inspectionProfiles/profiles_settings.xml
-address.ipynb
-excludePools.json
-remix_test.ipynb
-.idea/.gitignore
-test.sol
+.idea/
+temp/
+venv/
+.vscode/
+__pycache__/
+*.ipynb
+*.sol
 *.txt
 *.csv
-*.ipynb
 *.go
-abigen
 =======
 # Binaries for programs and plugins
 *.exe
@@ -19,13 +15,10 @@ abigen
 *.dll
 *.so
 *.dylib
+abigen
 
 # Test binary, built with `go test -c`
 *.test
 
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
-
-# Dependency directories (remove the comment below to include it)
-# vendor/
-abigen
