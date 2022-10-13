@@ -18,19 +18,16 @@ while i < len(tokens):
     if res.status_code == 200:
         try:
             resjson = json.loads(res.text)
-            result = resjson['result']
-            l = len(result)
-            if 0 < l < 100:
+            if resjson['status'] == '1':
+                result = resjson['result']
+                l = len(result)
                 addr_set = set()
                 for r in result:
                     addr_set.add(r['topics'][1])
                     addr_set.add(r['topics'][2])
                 pair_lst.append([address, l, len(addr_set)])
                 print(i, l, len(addr_set))
-            else:
-                pair_lst.append([address, l, 0])
-                print(i, l)
-            i += 1
+                i += 1
         except:
             print('.', end='')
     time.sleep(0.6)
