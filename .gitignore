@@ -8,6 +8,7 @@ __pycache__/
 *.txt
 *.csv
 *.go
+*.log
 =======
 # Binaries for programs and plugins
 *.exe
