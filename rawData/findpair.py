@@ -7,9 +7,9 @@ from multiprocessing.pool import ThreadPool
 w3 = Web3(IPCProvider("/root/node/geth.ipc"))
 
 with open("uni_factory.abi.json","r") as f:
-    factory_abi = json.loads(f.readline())
+    factory_abi = json.load(f)
 with open("uni_pair.abi.json","r") as f:
-    pair_abi = json.loads(f.readline())
+    pair_abi = json.load(f)
 
 exchange = {
     # 'pancakeswap': '0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73',
